@@ -18,11 +18,13 @@ I build LLM-powered products end to end and care most about the boring part that
 ### 🚀 Featured projects
 
 #### [typecast](https://github.com/nilayp-codes/typecast) · Structured Output Agent
-Turns messy job descriptions into **typed, validated JSON**. A strict Pydantic schema, a retry loop that feeds validation errors back to the model, and an **eval harness** that measures how often the output actually parses.
+Turns messy job descriptions into **typed, validated JSON**, and measures how often that JSON is actually correct. A strict Pydantic schema, a retry loop that feeds validation errors back to the model, an **eval** of 4 setups × 2 models on 30 real job posts, and an **MCP server** any AI agent can call to check its own output.
 
-`Python` `Pydantic` `LiteLLM` `OpenRouter` `Qwen`
+**Finding:** strict JSON mode made both models 98.9% valid, but only 84.7% (235B) and 67.1% (7B) of fields were correct. Valid isn't the same as correct.
 
-> **Next:** validator-only MCP server + PyPI package.
+`Python` `Pydantic` `LiteLLM` `MCP` `OpenRouter` `Qwen`
+
+> **Next:** PyPI package.
 
 #### [resume-ai](https://github.com/nilayp-codes/resume-ai) · AI resume builder, in production
 Live preview, multiple templates and ATS-friendly PDF generation, backed by Gemini.
@@ -47,7 +49,7 @@ Live preview, multiple templates and ATS-friendly PDF generation, backed by Gemi
 
 ### 🔭 Right now
 
-- Shipping `typecast` v1: hardening the eval harness
+- Shipped `typecast`: eval harness + MCP validator server
 - Open to **applied AI / LLM engineering** roles and internships
 
 ---
